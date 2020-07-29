@@ -9,4 +9,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=simple
     volumes:
+      # persist data across docker-compose up/down
       - ./data:/var/lib/mysql
+      # modify the my.cnf values
+      - ./my.cnf:/etc/mysql/my.cnf
